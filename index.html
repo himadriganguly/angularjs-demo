@@ -1,0 +1,42 @@
+<html ng-app="treatmentApp">
+	<head>
+		<title>Sample Angular JS</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+				
+	</head>
+	<body>
+		<div class="container" ng-controller="AppCtrl">
+			
+			<h1>Treatment Search Filter</h1>
+					
+			<h2>Search By Treatment Name</h2>
+			<p>For example: treatment12</p>		
+			<input type="text" class="input-small" placeholder="Treatment Name" ng-model="searchText.name" />
+			
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th>Treatment Code</th>
+			      <th>Treatment Name</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr ng-repeat="treatment in treatments | filter:searchText">
+			      <td>{{treatment.code}}</td>
+			      <td>{{treatment.name}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+		<script src="js/lib/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="js/lib/angular.min.js"></script>
+		<script type="text/javascript" src="js/controllers/app.js"></script>
+		
+		<script src="js/lib/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>
